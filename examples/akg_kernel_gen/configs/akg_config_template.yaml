@@ -1,0 +1,22 @@
+# AKG Kernel Gen — subprocess config template
+# This file defines what each MAS subprocess receives.
+# AgentPipe's prepare_config() injects base_url into agents.*.llm.base_url at runtime.
+
+agents:
+  kernel_gen:
+    model: kernel_gen        # the policy being trained
+    llm:
+      base_url: ""           # injected by prepare_config()
+      api_key: "dummy"
+  kernel_designer:
+    model: kernel_designer   # frozen in Phase 1; add to training in Phase 2
+    llm:
+      base_url: ""           # injected by prepare_config()
+      api_key: "dummy"
+
+task:
+  framework: torch
+  backend: cuda
+  arch: a100
+  dsl: triton_cuda
+  max_iterations: 5
