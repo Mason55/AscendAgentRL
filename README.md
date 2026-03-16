@@ -1,1 +1,2 @@
 # AscendAgentRL
+AscendAgentRL是一个面向Agent的强化学习框架，可以高效的对复杂的Agent进行多种强化学习算法训练，提供了Ascend算子生成Agent的receipe。此外，AscendAgentRL针对昇腾硬件的异步训推流程中的参数同步、训推一致性等特性做了优化，实现了在昇腾硬件上Agent训练性能和精度的最优实践。
