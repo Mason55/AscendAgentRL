@@ -1,0 +1,36 @@
+# Slime custom config for AKG Kernel Gen example.
+# These keys are injected into the slime args namespace via --custom-config-path.
+
+# Path to the AKG subprocess config template
+akg_config_template_path: examples/akg_kernel_gen/configs/akg_config_template.yaml
+
+# MAS entry script path
+akg_mas_entry: examples/akg_kernel_gen/mas_entry/akg_rl_entry.py
+
+# Which agent role to train
+akg_target_role: kernel_gen
+
+# Sample generation strategy (last_turn | aggregate_role | multi_role)
+akg_sample_mode: last_turn
+
+# Reward weights
+akg_reward_alpha: 1.0
+akg_reward_beta: 0.3
+akg_reward_gamma: 0.1
+akg_enable_profiling: false
+
+# Designer backend (frozen model served separately)
+akg_designer_backend_url: http://127.0.0.1:9000
+akg_designer_model_name: kernel_designer
+
+# Route name for kernel_gen in slime router
+akg_kernel_gen_route: train
+
+# Task defaults for GPU
+akg_task_backend: cuda
+akg_task_arch: a100
+akg_task_dsl: triton_cuda
+akg_max_iterations: 5
+
+# Episode timeout in seconds
+akg_episode_timeout: 300.0
